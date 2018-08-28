@@ -11,11 +11,13 @@ The following requirements must be adhered to in order to participate in Indodax
 - You must not disclose the issue to the public or a third-party before it has been fixed and prior written consent from Indodax.
 - You must comply with any applicable laws and regulations in connection with your participation in this program. 
 - Indodax’s development team, employees and all other affiliates are not eligible for rewards.
+
 Indodax’s bug bounty program is not a contest or competition. It is an experimental and discretionary rewards program. We may modify the terms of this program or terminate this program at any time without notice. All decisions as to the amount and type of rewards that may be issued, the method of payment (for monetary rewards), and whether or not any reported issue constitutes a significant risk or is eligible for a reward, will be determined at Indodax’s complete discretion in each case.
 
 ## Scope
 The following domains are in the scope of the bug bounty program:
 - Indodax.com and it subdomains.
+
 Any design or implementation issue that substantially affects the confidentiality or integrity of user data is likely to be within the scope of the program, this include : 
 ```
 - Cross-Site Request Forgery (CSRF).
