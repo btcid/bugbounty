@@ -55,6 +55,7 @@ In general, the following would not meet the threshold for severity:
 ## Rewards
 - Indodax’s bounty program considers a number of variables in determining rewards (ie:  difficulty of execution, report quality, business impacts).
 - All monetary rewards can only be credited to a Indodax wallet.
+- You are solely responsible for any applicable taxes arising from or relating to your participation in the bug bounty program.
 - Indodax will also issue certificate of recognition to distinguished individuals.
 
 ## Submission
