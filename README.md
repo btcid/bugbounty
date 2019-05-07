@@ -17,39 +17,66 @@ Indodax’s bug bounty program is not a contest or competition. It is an experim
 ## Scope
 The following domains are in the scope of the bug bounty program:
 - Indodax.com and it subdomains.
+- Android : https://play.google.com/store/apps/details?id=id.co.bitcoin
+- iOS : https://itunes.apple.com/id/app/indodax-trading-platform/id1349104693
 
 Any design or implementation issue that substantially affects the confidentiality or integrity of user data is likely to be within the scope of the program, this include : 
 ```
-- Cross-Site Request Forgery (CSRF).
-- Reflective or stored XSS.
-- Code Executions.
 - SQL injections.
+- Reflective or stored XSS.
+- Cross-Site Request Forgery (CSRF).
 - Server Side Request Forgery (SSRF).
-- Privilege Escalations.
-- Authentication Bypasses.
 - File inclusions (Local & Remote).
-- Protection Mechanism bypasses (CSRF bypass, etc.).
+- Server-Side Remote Code Execution (RCE).
 - Leakage of sensitive informations.
-- Directory Traversal.
-- Open redirects which allow stealing tokens/secrets. 
+- Authentication Bypasses.
+- Payment Manipulation.
+- Directory Traversal Issue.
+- Protection Mechanism bypasses (CSRF bypass, etc.).
+- Access Control Issues (Insecure Direct Object Reference Issues, Privilege Escalation, etc).
 ```
 
 ## Out of Scope
-In general, the following would not meet the threshold for severity:
+Non-Qualifying Vulnerabilities:
 ```
-- Any sort of DoS/DDoS attacks are strictly prohibited.
-- Brute force attack.
-- Social engineering, physical attack, phishing, spamming.
-- Clickjacking.
-- Application stack traces.
-- Self-type Cross Site Scripting.
-- CSRF with minimal security implications (Logout CSRF, etc.).
-- Password complexity requirement.
-- Rate Limit (i.e.: Email or SMS verification).
-- Vulnerabilities in second party or third party applications or systems.
-- Vulnerabilities affecting outdated or un-patched browsers or operating systems.
-- Vulnerabilities requiring the user to be compromised or to have malicious browser extensions.
-- Reports from automated tools or scans (without accompanying demonstration of exploitability).
+- Any sort of DoS/DDoS attacks are strictly prohibited
+- Brute force attack
+- Social engineering, physical attack, phishing, spamming
+- Application stack traces
+- Self-type Cross Site Scripting
+- Cross-site Request Forgery (CSRF) with minimal security implications (Logout CSRF, etc.)
+- Password complexity requirement
+- SSL/TLS scan reports (this means output from sites such as SSL Labs)
+- Banner grabbing issues (figuring out what web server we use, etc.)
+- Comma Separated Values (CSV) injection without demonstrating a vulnerability
+- Vulnerabilities related to auto-fill web forms
+- Vulnerabilities in second party or third party applications or platforms
+- Vulnerabilities only exploitable on out-of-date browsers or platforms
+- Vulnerabilities requiring the user to be compromised or to have malicious browser extensions
+- Invalid or missing SPF (Sender Policy Framework) records (incomplete or missing SPF/DKIM/DMARC)
+- Clickjacking/UI redressing with minimal security impact
+- Rate Limit (i.e.: Email or SMS verification)
+- Email verification deficiencies, expiration of password reset links, and password complexity policies
+- Theoretical vulnerabilities without actual proof of concept
+- Reports from automated web vulnerability scanners (Acunetix, Burp Suite, Vega, Nessus, etc.) that have not been validated
+- Open-Redirects. 99% of open redirects have low security impact. For the rare cases where the impact is higher, e.g., stealing oauth tokens, we do still want to hear about them
+```
+
+Non-Qualifying Vulnerabilities - Mobile Apps:
+```
+- Shared links leaked through the system clipboard
+- Any URIs leaked because a malicious app has permission to view URIs opened
+- Absence of certificate pinning
+- Sensitive data in URLs/request bodies when protected by TLS
+- User data stored unencrypted on external storage and private directory
+- Lack of obfuscation is out of scope
+- auth "app secret" hard-coded/recoverable in apk
+- Crashes due to malformed Intents sent to exported Activity/Service/BroadcastReceive (exploiting these for sensitive data leakage is commonly in scope) and due to malformed URL Schemes
+- Lack of binary protection control in android app
+- Lack of Exploit mitigations i.e., PIE, ARC, or Stack Canaries
+- Path disclosure in the binary
+- Snapshot/Pasteboard leakage
+- Runtime hacking exploits (exploits only possible in a jailbroken/rooted environment)
 ```
 
 ## Rewards
