@@ -41,6 +41,7 @@ Non-Qualifying Vulnerabilities:
 ```
 - Any sort of DoS/DDoS attacks are strictly prohibited
 - Brute force attack
+- Tabnabbing
 - Social engineering, physical attack, phishing, spamming
 - Application stack traces
 - Self-type Cross Site Scripting
